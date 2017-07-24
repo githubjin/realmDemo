@@ -11,6 +11,7 @@ import {
   Alert
 } from "react-native";
 import React, { Component } from "react";
+import { normalize } from "../utils";
 
 export default class Button extends Component {
   state = {
@@ -26,7 +27,7 @@ export default class Button extends Component {
   };
   render() {
     return (
-      <TouchableOpacity onPress={this.containerPressed}>
+      <TouchableOpacity onPress={this.containerPressed} style={{ flex: 1 }}>
         <View style={{ flex: 1 }}>
           <Bnt
             title="outer - none"
@@ -94,7 +95,7 @@ const Bnt = ({ children, title, pointerEvents = null, style = {}, onPress }) =>
       style={[styles.bnt, style]}
     >
       <Text style={styles.title}>
-        {title}
+        {title} - {normalize(18).toFixed(2)}
       </Text>
       {children}
     </View>
@@ -102,10 +103,12 @@ const Bnt = ({ children, title, pointerEvents = null, style = {}, onPress }) =>
 
 const styles = StyleSheet.create({
   bnt: {
-    padding: 10
+    padding: 10,
+    height: 100
   },
   title: {
-    color: "#cccccc"
+    color: "#cccccc",
+    fontSize: normalize(18)
   },
   outer: {
     backgroundColor: "#707070",

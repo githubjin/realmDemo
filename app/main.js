@@ -41,22 +41,26 @@ export default class realmDemo extends Component {
   };
   _render() {
     return (
-      <BrawerLayout
-        drawerPosition="left"
-        drawerWidth={Dimensions.get("window").width * 0.6}
-        renderNavigationView={this._renderNavigationView}
-        onDrawerOpen={this.onDrawerOpen}
-        onDrawerClose={this.onDrawerClose}
-        onDrawerStateChanged={this.onDrawerStateChanged}
-        drawerBackgroundColor="#999999"
-      >
-        <RealmDashboard />
-      </BrawerLayout>
+      <View>
+        <Button />
+        <BrawerLayout
+          drawerPosition="left"
+          drawerWidth={Dimensions.get("window").width * 0.6}
+          renderNavigationView={this._renderNavigationView}
+          onDrawerOpen={this.onDrawerOpen}
+          onDrawerClose={this.onDrawerClose}
+          onDrawerStateChanged={this.onDrawerStateChanged}
+          drawerBackgroundColor="#999999"
+        >
+          <RealmDashboard />
+        </BrawerLayout>
+      </View>
     );
   }
   render() {
     return (
       <View style={{ flex: 1 }}>
+        <Button />
         <TransparentLayer />
       </View>
     );
